@@ -1,0 +1,209 @@
+/* Modern CSS Reset */
+/* Ensures consistent styling across all browsers and establishes accessible base styles */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Set core root defaults */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Improve text wrapping */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Remove default heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Improve table defaults */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+  border: none;
+}
+
+/* Improve form element defaults */
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+}
+
+/* Remove default textarea resize */
+textarea {
+  resize: vertical;
+}
+
+/* Improve anchor defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Ensure links are keyboard accessible */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Accessible focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--focus-ring-color, #d84315);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Improve button focus styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--focus-ring-color, #d84315);
+  outline-offset: 2px;
+}
+
+/* Ensure disabled elements are not interactive */
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve readability for high contrast mode */
+@media (prefers-contrast: high) {
+  :focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* Ensure hidden elements are truly hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* Improve screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Improve skip link accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-background, #ffffff);
+  color: var(--color-text-primary, #212121);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
