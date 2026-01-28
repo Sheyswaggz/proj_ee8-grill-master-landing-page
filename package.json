@@ -1,0 +1,36 @@
+{
+  "name": "grill-business-landing-page",
+  "version": "1.0.0",
+  "description": "Professional landing page for a grill business showcasing products and services",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint . --ext .js,.jsx,.mjs --report-unused-disable-directives --max-warnings 0",
+    "lint:css": "stylelint \"**/*.css\"",
+    "format": "prettier --write \"**/*.{js,jsx,mjs,css,html,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,mjs,css,html,json,md}\""
+  },
+  "keywords": [
+    "grill",
+    "landing-page",
+    "business",
+    "vite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "eslint": "^9.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {}
+}
