@@ -1,6 +1,9 @@
 /* Section-Specific Styles - Hero, Products, Contact, and Footer */
 /* Implements unique layouts and visual treatments for each major page section */
 
+/* Import hero-specific styles */
+@import './hero.css';
+
 /* ============================================
    HERO SECTION
    ============================================ */

@@ -1,0 +1,272 @@
+/* Hero Section Styles - Full Viewport Height with Background Imagery */
+
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&h=1080&q=80&fit=crop');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Dark overlay for text readability and contrast */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.7) 0%,
+    rgba(159, 0, 0, 0.5) 50%,
+    rgba(26, 26, 26, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero content container */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-6);
+  text-align: center;
+  color: var(--color-text-inverse);
+}
+
+/* Hero heading with responsive typography */
+.hero-content h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-6);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hero subheadline */
+.hero-subheadline {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-10);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Call-to-action buttons container */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+/* Hero button overrides for enhanced visibility */
+.hero-actions .btn {
+  min-width: 200px;
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Primary button in hero */
+.hero-actions .btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.hero-actions .btn-primary:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hero-actions .btn-primary:active {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px) scale(1);
+}
+
+/* Secondary button in hero */
+.hero-actions .btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-text-inverse);
+  color: var(--color-text-inverse);
+}
+
+.hero-actions .btn-secondary:hover {
+  background-color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hero-actions .btn-secondary:active {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px) scale(1);
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet responsive adjustments */
+@media (max-width: 1023px) {
+  .hero-section {
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .hero-content h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero-subheadline {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-8);
+  }
+
+  .hero-actions .btn {
+    min-width: 180px;
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--font-size-md);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 100vh;
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .hero-content h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .hero-subheadline {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-width: auto;
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 479px) {
+  .hero-content h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .hero-subheadline {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero-section::before {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .hero-content h1,
+  .hero-subheadline {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content h1,
+  .hero-subheadline,
+  .hero-actions {
+    animation: none;
+  }
+
+  .hero-actions .btn:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .hero-section {
+    min-height: auto;
+    background-image: none;
+    background-color: var(--color-background);
+  }
+
+  .hero-section::before {
+    display: none;
+  }
+
+  .hero-content {
+    color: var(--color-text-primary);
+  }
+
+  .hero-content h1,
+  .hero-subheadline {
+    color: var(--color-text-primary);
+    text-shadow: none;
+  }
+
+  .hero-actions {
+    display: none;
+  }
+}
