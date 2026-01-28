@@ -4,6 +4,9 @@
 /* Import hero-specific styles */
 @import './hero.css';
 
+/* Import products-specific styles */
+@import './products.css';
+
 /* ============================================
    HERO SECTION
    ============================================ */
@@ -506,7 +509,7 @@
 }
 
 .footer-link::before {
-  content: '→';
+  content: '\2192';
   opacity: 0;
   transition: opacity var(--transition-fast);
 }
