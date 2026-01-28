@@ -18,3 +18,6 @@
 
 /* 6. Section Styles - Page-Specific Layouts */
 @import url('sections.css');
+
+/* 7. Performance Optimizations - Lazy Loading and Asset Optimization */
+@import url('performance.css');
