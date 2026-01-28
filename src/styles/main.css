@@ -1,0 +1,20 @@
+/* Main CSS Entry Point - Grill Business Landing Page */
+/* Imports all stylesheets in proper cascade order */
+
+/* 1. CSS Custom Properties - Design System Foundation */
+@import url('variables.css');
+
+/* 2. CSS Reset - Browser Normalization */
+@import url('reset.css');
+
+/* 3. Typography System - Text Styles and Hierarchy */
+@import url('typography.css');
+
+/* 4. Layout System - Grid, Flexbox, and Responsive Utilities */
+@import url('layout.css');
+
+/* 5. Component Styles - Reusable UI Elements */
+@import url('components.css');
+
+/* 6. Section Styles - Page-Specific Layouts */
+@import url('sections.css');
