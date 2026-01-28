@@ -36,7 +36,12 @@ export default defineConfig({
           return `assets/[name]-[hash][extname]`;
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js'
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
       }
     },
     
@@ -45,7 +50,18 @@ export default defineConfig({
     
     reportCompressedSize: true,
     
-    manifest: false
+    manifest: false,
+    
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug']
+      },
+      format: {
+        comments: false
+      }
+    }
   },
   
   server: {
@@ -70,7 +86,10 @@ export default defineConfig({
     strictPort: false,
     host: 'localhost',
     open: false,
-    cors: true
+    cors: true,
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable'
+    }
   },
   
   css: {
@@ -99,7 +118,10 @@ export default defineConfig({
     jsxInject: '',
     logOverride: {
       'this-is-undefined-in-esm': 'silent'
-    }
+    },
+    drop: ['console', 'debugger'],
+    legalComments: 'none',
+    treeShaking: true
   },
   
   logLevel: 'info',
